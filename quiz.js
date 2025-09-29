@@ -9,8 +9,14 @@ function loadSript() {
 
 function checkAnswer() {
     const correctAnswer = "4";
-    const userAnswer = document.querySelector('[name="quiz"]').value;
+    const quizRadioBtn = document.querySelector('[name="quiz"]').value;
     const feedback = document.getElementById('feedback');
+
+    let userAnswer = ""
+    
+    if (quizRadioBtn.checked) {
+        userAnswer = quizRadioBtn.value
+    }
 
     if (userAnswer === correctAnswer) {
         feedback.textContent = "Correct! Well done.";
